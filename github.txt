@@ -1,0 +1,2 @@
+git init mean git install to project folder. 
+git commit mean save the current project with name
