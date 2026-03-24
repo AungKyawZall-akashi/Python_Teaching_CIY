@@ -1,0 +1,58 @@
+tasks = []  # (To add tasks data list)
+
+while True:  # while loop
+    
+    print("\n===== TO-DO LIST =====")
+    print("1. Add Task")
+    print("2. View Tasks")
+    print("3. Remove Task")
+    print("4. Exit")
+
+    choice = input("Choose an option (1-4): ")
+
+    # Add Task
+    if choice == "1":
+        task = input("Enter a new task: ")
+        tasks.append(task)
+        print("✅ Task added!")
+
+    # View Tasks
+    elif choice == "2":
+        if len(tasks) == 0:
+            print("📭 No tasks found.")
+        else:
+            print("\n📋 Your Tasks:")
+            i = 0
+            while i < len(tasks):
+                print(i + 1, ".", tasks[i])
+                i += 1
+
+    # Remove Task
+    elif choice == "3":
+        if len(tasks) == 0:
+            print("📭 No tasks to remove.")
+        else:
+            print("\n📋 Your Tasks:")
+            i = 0
+            while i < len(tasks):
+                print(i + 1, ".", tasks[i])
+                i += 1
+
+            try:
+                num = int(input("Enter task number to remove: "))
+
+                if num > 0 and num <= len(tasks):
+                    removed = tasks.pop(num - 1)
+                    print("❌ Removed:", removed)
+                else:
+                    print("⚠️ Invalid task number.")
+            except:
+                print("⚠️ Please enter a valid number.")
+
+    # Exit
+    elif choice == "4":
+        print("👋 Goodbye!")
+        break
+
+    else:
+        print("⚠️ Invalid choice. Try again.")
